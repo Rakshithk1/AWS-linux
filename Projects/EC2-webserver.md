@@ -37,4 +37,27 @@ Open mobaexterm or Putty-- click on new terminal---SSH
          usermod -aG wheel username
          once the user is added, he can use the same above steps and run the website. 
 
-     **Once the website is working, you can stop the EC2 instance or terminate it so that it wont charge you**    
+     **Once the website is working, you can stop the EC2 instance or terminate it so that it wont charge you**   
+
+     ## Git Commands Used
+During this project, all Git operations were performed using the CLI.
+Here are some of the commands I used:
+
+
+    #cloning the repo
+      git clone https://github.com/Rakshithk1/AWS-linux.git
+
+    #checking the repo status
+      git status
+
+    #committing changes
+      git add .
+      git commit -m "changes that we have made"
+
+    #renaming the filename from readme.md to ec2
+      mv readme.md ec2.md
+      git add .
+      git commit -m "changes made"
+
+    #pushing the changes to the git
+      git push origin main
