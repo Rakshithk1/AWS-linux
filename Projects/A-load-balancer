@@ -6,13 +6,13 @@
 		Choose PEM key
 		Launch instance
 	      
-	      **Connect the instances and install apache using yum install httpd -y
+	**Connect the instances and install apache using yum install httpd -y**
 	          Go to the path cd /var/www/html
 		  echo "the content you want" >>index.html 			#Here you are enetering the contents to both the server and you can set same or diff content
 		  service httpd start						#Starting the server
 		  copy the instance public ip and check the browser
 
-	      **Click on Target group and create the target group and select both instances and register it. 
+	 **Click on Target group and create the target group and select both instances and register it.**
 	        Go to load balancer and click on create load balancer
 		You will be able to set the load balancer and enter the needed details
 		Add both the listener and also choose the availibity zones which used for the ec2
@@ -20,24 +20,24 @@
 	 **Once the status is active, copy the DNS name and enter it in the browser, if you refresh the page continuosly, you can see the servers getting switched.
 	 You can enter the DNSname:80 to display server1 and DNSname:81 to display server 2 which was added as a listener while setting up load balancer.
 
-	 **You can terminate or stop once instance and you can see the other sever would still be working.
+	 **You can terminate or stop once instance and you can see the other sever would still be working**.
 
-##Make sure to delete all the services once done
+## Make sure to delete all the services once done
 
 
 
-##This file is written using git cli
+## This file is written using git cli
          accessed the git cli
 	 Created the project name using touch
 	 And edited using vim
 
-     #git commit -m "changes made" to commit
+#git commit -m "changes made" to commit
 
-     #before that we need to add the file
+#before that we need to add the file
         git add file
 
 
-     #push the file
+#push the file
         git push origin main
 
 
