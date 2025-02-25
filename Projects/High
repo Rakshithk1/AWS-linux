@@ -1,0 +1,43 @@
+##This project demonstrates how to set up a highly available web application using AWS EC2 instances behind an Application Load Balancer (ALB). The ALB distributes incoming traffic across multiple EC2 instances to ensure load balancing, fault tolerance, and high availability.
+
+	**Go to free tier of AWS**
+		Create 2 EC2 instances in different availibity zones
+		Enable the HTTP and SSH ports
+		Choose PEM key
+		Launch instance
+	      
+	      **Connect the instances and install apache using yum install httpd -y
+	          Go to the path cd /var/www/html
+		  echo "the content you want" >>index.html 			#Here you are enetering the contents to both the server and you can set same or diff content
+		  service httpd start						#Starting the server
+		  copy the instance public ip and check the browser
+
+	      **Click on Target group and create the target group and select both instances and register it. 
+	        Go to load balancer and click on create load balancer
+		You will be able to set the load balancer and enter the needed details
+		Add both the listener and also choose the availibity zones which used for the ec2
+		Launch the load balancer and wait for the status to be in active mode
+	 **Once the status is active, copy the DNS name and enter it in the browser, if you refresh the page continuosly, you can see the servers getting switched.
+	 You can enter the DNSname:80 to display server1 and DNSname:81 to display server 2 which was added as a listener while setting up load balancer.
+
+	 **You can terminate or stop once instance and you can see the other sever would still be working.
+
+##Make sure to delete all the services once done
+
+
+
+##This file is written using git cli
+         accessed the git cli
+	 Created the project name using touch
+	 And edited using vim
+
+     #git commit -m "changes made" to commit
+
+     #before that we need to add the file
+        git add file
+
+
+     #push the file
+        git push origin main
+
+
