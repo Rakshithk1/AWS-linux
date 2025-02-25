@@ -1,0 +1,24 @@
+##Setup and configuration of Auto Scaling in AWS to automatically scale EC2 instances based on CPU utilization. The project includes creating an Auto Scaling group, launch template, and testing with simulated CPU load to trigger scaling actions
+
+
+
+	**First we have to create an Launch templete
+		Go to EC2 and select Launch templete
+		Select the details which you need for the instance
+
+	  Once the Template is created, click on Autoscaling group
+	   	Click on create auto scaling group
+		Choose the launch templete you created
+		You can choose any VPC and subnet
+		You can use any security group or create it
+		Set the scaling policies as you desire
+		define the scaling actions to increase or decrease the number of instances based on CPU load
+
+	  Once this is set, you can see an instance would be created and it would be running.
+	  You can stop the instance and another instance would be created automatically. Which will prevent the down time
+	  You can also increase the load of the CPU by accessing the instance via SSH and entering the forloop
+	  	for i in {1..4}; do yes > /dev/null & done
+	  Once this is done, you can see that 2 EC2 instances would be created which will distribute the load
+
+
+	  #This file is created using Git CLI
