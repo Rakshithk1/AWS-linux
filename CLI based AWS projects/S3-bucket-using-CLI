@@ -1,0 +1,34 @@
+## This project is about creating and deleting S3 bucket.
+	##Here we are using just CLI to create and delete the bucket
+
+
+
+
+	**Firs you will have to create an IAM role**
+	  Then go to the IAM users dashboard and click on security
+	  There you will have to create the access keys and select for CLI
+	  Once it is done, save the access keys and security keys, so that you can be able to login to the CLI
+
+	**Now open Mobaxterm or Putty and enter the cmd as
+		aws configure	
+		##here you will get an options to enter the access key and security key, and also enter the region and enter any name
+		Once this is done, Enter the cmd to confirm if you are logged into the user.
+			aws sts get-caller-identity							##sts --- This stands for Security Token Service, which is used for identity verification.
+													##get-caller-identity --- This specific command retrieves details about the IAM user or role
+
+			Now this means you are logged in
+			You can check by using cmds like " aws s3 ls or aws ec2 ls			##this cmd is used to display the s3 and ec2 if present
+			To create the s3 bucket you will have to enter this cmd
+				aws s3 mb s3://bucket_name						##mb refers to make bucket
+			Once the s3 is created you can check using aws s3 ls or access s3 in site
+			To add the file to the s3
+				aws s3 cp /file_in_your_system bucket_name/ 				##the file will be added to the bucket
+			To remove the file and bucket you can use
+				aws s3 rm s3://bucket/filename
+				aws s3 -rvf s3://bucket							##this will remove the bucket and file
+
+
+
+
+
+        ##**This file is created and committed using git cli**
