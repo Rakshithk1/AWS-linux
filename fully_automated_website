@@ -1,5 +1,36 @@
+AWS Deployment Setup and Steps
 
-***************
+VPC Configuration:
+First you have to set up an vpc
+Set up subnets for different availability zones.
+Configure an Internet Gateway and attache it to the VPC.
+Create and associate a Route Table with public subnets.
+
+##VPC is used for the instances to be in the private network
+
+Elastic IP: This is used to set an static fixed ip for the instance(optional)
+
+Load Balancer Setup:
+Create an Application Load Balancer
+But first you need to configure Target Groups to register EC2 instances.
+Configure health checks for instance monitoring.
+
+###Application load balancer is used so that if one instanes goes down, the traffic would moved to the another instance and reduce the downtime
+
+
+CloudWatch Monitoring:
+Set up CloudWatch Alarms to monitor instance health.
+Configure CloudWatch Logs to capture application logs.
+
+
+Auto Scaling:
+Create an Auto Scaling Group to automatically scale EC2 instances.
+Before that we have to create templates with AMI, security groups, and user data.
+Set up scaling policies based on CPU utilization.
+
+###Autoscaling is used because, if the cpu of 1 instance goes high or traffic is high, the autoscaling will automatically create another instance with the same content, and deletes it if the traffic is less.
+
+**************
 
 Now here we need to configure the website files
 
