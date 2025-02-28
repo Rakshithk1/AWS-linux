@@ -1,0 +1,42 @@
+
+***************
+
+Now here we need to configure the website files
+
+        ##Here we are storing our website files instead of ec2
+        First create an s3 bucket and upload file with the website content
+        and then uncheck the "block public access" and enable the static hosting
+        and create the bucket. Make sure to set the permission.
+
+
+Now go to ec2 and copy the public ip and SSH into the instance and install httpd
+yum install httpd -y
+service httpd start
+
+
+        Now you can go to lambda in the AWS and create function
+        select python and add the permission and attach the role
+        You have to write a code which is used to test if the index.html file is        accessible via s3 url
+        (YOu can get the code from google for now)
+
+Next you have to ssh into the ec2 so that the ec2 would get the file stored in the s3 bucket
+        ssh into the ec2 and use the below cmd
+        aws s3 cp s3://s3-bucket-name/index.html /var/www/html/index.html
+
+Now go to lamda and click on test. ---no changes in the website.
+Go to s3 and update the same file with some changes made to it, Go to the lambda and click on test and the new updated file will be updated to the ec2 and the website will also be upto date.
+
+##If we do not want to manually click on test each time we modify the s3 file, we use CI/CD.
+
+        Search for code deploy--Create an application
+
+        Create a deployment group and attach the IAM role
+        Select EC2 instances as the deployment environment.
+        Choose in-Place Deployment.
+        Enable CloudWatch alarms for monitoring.
+
+##before that we have to upload a file with code, this define how an application is deployed. This is used for code deploying puropse.( you will get the code in google)
+
+        Now click on start deploy in code deploy section, you might get failed, and also success.
+
+        At last, make any changes to the index file and re add it to the s3 bucket and check the website again and you can see the updated website, and we did not needed to click on test on lambda.
